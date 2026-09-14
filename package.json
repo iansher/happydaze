@@ -1,0 +1,14 @@
+{
+  "name": "happydaze",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:host": "esbuild src/host-entry.js --bundle --format=iife --outfile=assets/index-host.js"
+  },
+  "dependencies": {
+    "penpal": "^7.0.4"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  }
+}

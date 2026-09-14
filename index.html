@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>happydaze</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #gameIFrame {
+        width: 100vw;
+        height: 100vh;
+        border: 0;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Official, unmodified glue library for the ExternalResultsApiV1
+         postMessage protocol — see externalResultsApiV1.js. -->
+    <script src="./externalResultsApiV1.js"></script>
+    <!-- Our own bridge: implements ready/balance/play/endPlay by opening and
+         watching real sessions on the Chain SDK host. Built from
+         src/host-entry.js via `npm run build:host`. -->
+    <script src="./assets/index-host.js"></script>
+
+    <!-- The real game, unmodified, loaded straight from joyplay's own
+         server in "external" mode — see goofy-puzzling-trinket.md for why
+         nothing about the game itself needs to be hosted or touched here. -->
+    <iframe
+      id="gameIFrame"
+      src="https://dev.joyplay.com/spinsandwins/index.html?container=external&incrementBalanceOnWin=true&gamename=happydaze"
+    ></iframe>
+  </body>
+</html>
